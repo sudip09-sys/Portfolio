@@ -29,7 +29,7 @@ Expected URL after deployment: https://sudip09-sys.github.io/Portfolio/
 - [x] Semantic HTML, responsive CSS and JavaScript interactions implemented
 - [x] Enable GitHub Pages and verify the live website
 - [x] Run Lighthouse on the deployed site; Accessibility measured 100
-- [ ] Save the actual Lighthouse screenshot
+- [x] Save the actual Lighthouse screenshot
 - [ ] Complete keyboard/mobile checks and verify both color themes
 - [ ] Submit repository URL for Git homework
 - [ ] Submit live URL and Lighthouse screenshot for deployment homework
@@ -40,4 +40,4 @@ Mobile PageSpeed Insights audit, 5 November 2026: Performance 94, Accessibility 
 
 Report: https://pagespeed.web.dev/analysis/https-sudip09-sys-github-io-Portfolio/186f1of5fe?form_factor=mobile
 
-Live dark/light mode and API/all-project filtering were tested successfully. The portrait renders correctly. A screenshot of the score report was captured in the browser session; a downloadable screenshot is not yet included in this repository. Save the report score view for Cybercampus submission. Automated accessibility results do not replace manual checks.
+Live dark/light mode and API/all-project filtering were tested successfully. The portrait renders correctly. The original score screenshot is saved at evidence/lighthouse-mobile-scores.jpg. The connected submission entry point is https://sudip09-sys.github.io/webpro-w9/ . Automated accessibility results do not replace manual checks.
