@@ -40,4 +40,4 @@ Mobile PageSpeed Insights audit, 5 November 2026: Performance 94, Accessibility 
 
 Report: https://pagespeed.web.dev/analysis/https-sudip09-sys-github-io-Portfolio/186f1of5fe?form_factor=mobile
 
-Live dark/light mode and API/all-project filtering were tested successfully. The portrait renders correctly. The original score screenshot is saved at evidence/lighthouse-mobile-scores.jpg. The connected submission entry point is https://sudip09-sys.github.io/webpro-w9/ . Automated accessibility results do not replace manual checks.
+Live dark/light mode and API/all-project filtering were tested successfully. The portrait renders correctly. The original score screenshot is saved at evidence/lighthouse-mobile-scores.jpg. The connected submission entry point is https://sudip09-sys.github.io/WebProgramming/week10/ . Automated accessibility results do not replace manual checks.
