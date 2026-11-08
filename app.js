@@ -70,19 +70,70 @@
   };
   const skillControls = document.querySelector('.skill-controls');
   const skillButtons = [...skillControls.querySelectorAll('button')];
+  const skillList = document.getElementById('skill-list');
+  const skillDetail = document.getElementById('skill-detail');
+  const skillPanel = document.getElementById('skill-panel');
+  const skillDetails = {
+    'HTML': 'I use semantic HTML to structure project pages and label form controls.',
+    'CSS': 'I use CSS Grid, Flexbox and media queries to build layouts for different screens.',
+    'JavaScript': 'JavaScript powers Memory Match game states, form validation and the project filters on this page.',
+    'Git & GitHub': 'I practise commits, feature branches, merging and publishing projects with GitHub Pages.',
+    'Responsive layouts': 'My layouts adapt from a single column on phones to wider project grids on desktop.',
+    'Accessibility': 'I practise keyboard navigation, visible focus, semantic markup and accessible form feedback.',
+    'Premiere Pro': 'Premiere Pro is one of the tools I use for video editing at LumaCreatives.',
+    'DaVinci Resolve': 'I use DaVinci Resolve as part of my editing and color workflow.',
+    'Color grading': 'I work with color to give footage a consistent look and support the story.',
+    'Visual storytelling': 'I arrange shots to make the story clear and keep the audience engaged.',
+    'Pacing & sound': 'I pay attention to the timing of cuts and how sound supports each moment.',
+    'Python': 'Python is part of my programming toolkit as a Computer Engineering student.',
+    'Problem solving': 'I break a larger task into smaller steps, then check each part as I build.',
+    'Algorithms': 'I study algorithms and practise translating rules into working program logic.',
+    'Databases': 'My coursework includes database design, SQL and a Library Management System project.',
+    'Computer Engineering': 'I study Computer Engineering at Gachon University in South Korea.'
+  };
+  let panelAnimation;
+
+  function renderSkillArea(key) {
+    const area = skillAreas[key];
+    document.getElementById('skill-label').textContent = area.label;
+    document.getElementById('skill-title').textContent = area.title;
+    document.getElementById('skill-description').textContent = area.description;
+    skillDetail.textContent = skillDetails[area.tools[0]];
+    skillList.replaceChildren(...area.tools.map((tool, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.dataset.tool = tool;
+      button.textContent = tool;
+      button.setAttribute('aria-pressed', String(index === 0));
+      button.setAttribute('aria-controls', 'skill-detail');
+      item.append(button);
+      return item;
+    }));
+  }
+
+  skillList.addEventListener('click', event => {
+    const button = event.target.closest('button[data-tool]');
+    if (!button) return;
+    skillList.querySelectorAll('button').forEach(item => {
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+    skillDetail.textContent = skillDetails[button.dataset.tool];
+  });
+
   skillControls.hidden = false;
+  renderSkillArea('web');
   skillButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const area = skillAreas[button.dataset.skill];
       skillButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-      document.getElementById('skill-label').textContent = area.label;
-      document.getElementById('skill-title').textContent = area.title;
-      document.getElementById('skill-description').textContent = area.description;
-      document.getElementById('skill-list').replaceChildren(...area.tools.map(tool => {
-        const item = document.createElement('li');
-        item.textContent = tool;
-        return item;
-      }));
+      renderSkillArea(button.dataset.skill);
+      if (!motionPreference.matches && skillPanel.animate) {
+        panelAnimation?.cancel();
+        panelAnimation = skillPanel.animate([
+          { opacity: 0.35, transform: 'translateY(14px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ], { duration: 350, easing: 'ease-out' });
+      }
     });
   });
 
@@ -90,12 +141,9 @@
   if ('IntersectionObserver' in window && !motionPreference.matches) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('is-visible', entry.isIntersecting);
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.1 });
     revealElements.forEach(element => observer.observe(element));
     root.classList.add('motion-ready');
   }
@@ -107,6 +155,8 @@
   function updateScroll() {
     const distance = root.scrollHeight - window.innerHeight;
     progress.style.transform = `scaleX(${distance > 0 ? window.scrollY / distance : 0})`;
+    const shift = motionPreference.matches ? 0 : Math.min(window.scrollY * 0.035, 24);
+    root.style.setProperty('--masthead-shift', `${shift}px`);
     let activeId = 'home';
     sections.forEach(section => {
       if (section.getBoundingClientRect().top <= 160) activeId = section.id;

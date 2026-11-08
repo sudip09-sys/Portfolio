@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261108-2">
+  <script src="app.js?v=20261108-2" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -21,7 +21,7 @@
     <button id="theme-toggle" class="theme-button" type="button" aria-pressed="false" hidden>Light mode</button>
     <a class="header-contact" href="#contact">Let’s talk ↗</a>
   </header>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero wrap" id="home" aria-labelledby="hero-title">
       <div class="hero-topline"><span>COMPUTER ENGINEERING × VIDEO EDITING</span><span>NEPAL → SOUTH KOREA</span></div>
       <div class="outline-title" aria-hidden="true">PORTFOLIO</div>
@@ -67,7 +67,7 @@
     <section id="skills" class="section wrap" aria-labelledby="skills-title">
       <div class="section-heading reveal"><p class="eyebrow">TOOLS OF THE TRADE</p><h2 id="skills-title">Code meets <em>the cut.</em></h2><p>Two sides of the same curiosity.</p></div>
       <div class="skill-controls" role="group" aria-label="Select a skill area" hidden><button type="button" data-skill="web" aria-pressed="true" aria-controls="skill-panel">Web development</button><button type="button" data-skill="editing" aria-pressed="false" aria-controls="skill-panel">Video editing</button><button type="button" data-skill="engineering" aria-pressed="false" aria-controls="skill-panel">Engineering</button></div>
-      <div id="skill-panel" class="skill-panel reveal" aria-live="polite"><div><p class="eyebrow" id="skill-label">WEB DEVELOPMENT</p><h3 id="skill-title">From a blank file to a working page.</h3><p id="skill-description">HTML for structure, CSS for layout, and JavaScript for the moments when a page needs to respond. I practise through small projects, forms and API-powered apps.</p></div><ul class="skills" id="skill-list"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git &amp; GitHub</li><li>Responsive layouts</li><li>Accessibility</li></ul></div>
+      <div id="skill-panel" class="skill-panel reveal"><div><p class="eyebrow" id="skill-label">WEB DEVELOPMENT</p><h3 id="skill-title">From a blank file to a working page.</h3><p id="skill-description">HTML for structure, CSS for layout, and JavaScript for the moments when a page needs to respond. I practise through small projects, forms and API-powered apps.</p><p id="skill-detail" class="skill-detail" role="status" aria-live="polite">Choose a skill to see how I use it.</p></div><ul class="skills" id="skill-list" aria-label="Explore individual skills"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git &amp; GitHub</li><li>Responsive layouts</li><li>Accessibility</li></ul></div>
       <noscript><p>My other tools include Premiere Pro, DaVinci Resolve, color grading and Python.</p></noscript>
     </section>
     <section id="coursework" class="section wrap" aria-labelledby="coursework-title">
