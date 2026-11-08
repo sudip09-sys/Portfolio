@@ -1,43 +1,36 @@
 # Sudip Sah — Portfolio
 
-Computer Engineering student at Gachon University and video editor at LumaCreatives.
+Personal portfolio for a Computer Engineering student at Gachon University and video editor at LumaCreatives.
 
-## Contents
+## Design and interaction
 
-- Name, portrait, biography and skills.
-- Three course projects: Memory Match, Book Search and JokeLab.
-- Connected Git exercises, deployment practice, complete coursework and team-project pull request.
-- Semantic header, nav, main and footer.
-- Responsive layout, visible keyboard focus and reduced-motion support.
-- Dark/light theme toggle with local preference storage and project-category filters.
-- Descriptive image alt text; decorative project artwork is hidden from assistive technology.
+The black-and-red visual direction follows the supplied portfolio reference recording, adapted to Sudip's biography and projects.
+
+- Large outlined masthead, red portrait treatment and responsive editorial layout.
+- Memory Match, Book Search and JokeLab project links with category filters.
+- Skill-area controls for web development, video editing and engineering.
+- Scroll reveals, section navigation, a reading-progress line and subtle portrait tilt.
+- Persistent dark/light theme preference.
+- Keyboard focus, skip navigation, descriptive alt text and reduced-motion support.
+- Content and project links remain available when JavaScript is disabled.
 
 ## Run locally
 
-Open index.html in a browser, or serve this folder with a local static web server. No build step or dependencies are needed.
+Open `index.html`, or serve the repository with a static web server. No build step is required.
 
-## GitHub Pages
+## Published site
 
-Settings → Pages → Deploy from a branch → main → /(root) → Save.
+https://sudip09-sys.github.io/Portfolio/
 
-Expected URL after deployment: https://sudip09-sys.github.io/Portfolio/
+GitHub Pages serves `main` from the repository root.
 
-## Submission checklist
+Course submission materials: https://sudip09-sys.github.io/WebProgramming/week10/
 
-- [x] Portfolio content and three course-project links
-- [x] Five meaningful implementation commits
-- [x] Semantic HTML, responsive CSS and JavaScript interactions implemented
-- [x] Enable GitHub Pages and verify the live website
-- [x] Run Lighthouse on the deployed site; Accessibility measured 100
-- [x] Save the actual Lighthouse screenshot
-- [ ] Complete keyboard/mobile checks and verify both color themes
-- [ ] Submit repository URL for Git homework
-- [ ] Submit live URL and Lighthouse screenshot for deployment homework
+## Validation and evidence
 
-## Measured Lighthouse result
+The redesign passes JavaScript syntax and static HTML reference checks. A fresh Lighthouse audit and full mobile/keyboard browser checks are still required for this version.
 
-Mobile PageSpeed Insights audit, 5 November 2026: Performance 94, Accessibility 100, Best Practices 100, SEO 100.
+The screenshot at `evidence/lighthouse-mobile-scores.jpg` records the **previous design**, measured on 5 November 2026 with Performance 94, Accessibility 100, Best Practices 100 and SEO 100. Those measurements are historical and do not measure the redesigned page.
 
-Report: https://pagespeed.web.dev/analysis/https-sudip09-sys-github-io-Portfolio/186f1of5fe?form_factor=mobile
+Previous audit: https://pagespeed.web.dev/analysis/https-sudip09-sys-github-io-Portfolio/186f1of5fe?form_factor=mobile
 
-Live dark/light mode and API/all-project filtering were tested successfully. The portrait renders correctly. The original score screenshot is saved at evidence/lighthouse-mobile-scores.jpg. The connected submission entry point is https://sudip09-sys.github.io/WebProgramming/week10/ . Automated accessibility results do not replace manual checks.
